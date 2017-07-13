@@ -8,9 +8,13 @@ My .vim folder and .vimrc file: brings autocompletion, highlighting and other ha
 ```sh
 cd ~
 git clone --recursive git@github.com:galeone/.vim
-mv .vim/.vimrc .
+cp .vim/.vimrc .
 cd /usr/include
 ctags -f ~/.vim/stdtags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+
+# On Archlinux is better using system-libclang
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer --system-libclang
 ```
 
 ### C++ projects
