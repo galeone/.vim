@@ -1,0 +1,15 @@
+[submodule "bundle/jedi-vim"]
+	path = bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "bundle/vim-clang-format"]
+	path = bundle/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format
+[submodule "bundle/vim-cmake"]
+	path = bundle/vim-cmake
+	url = https://github.com/jansenm/vim-cmake
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
