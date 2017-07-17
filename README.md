@@ -8,7 +8,7 @@ My .vim folder and .vimrc file: brings autocompletion, highlighting and other ha
 ```sh
 cd ~
 git clone --recursive git@github.com:galeone/.vim
-cp .vim/.vimrc .
+ln -s ~/.vim/.vimrc ~/.vimrc
 cd /usr/include
 ctags -f ~/.vim/stdtags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 
