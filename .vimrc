@@ -57,6 +57,8 @@ let g:clang_format#style_options = {
 " ClangFormat command on write
 autocmd BufWrite *.cpp,*.cc,*.hpp :ClangFormat
 
+autocmd BufWrite *.py :0,$!yapf --style google
+
 " Use vim-jedy for editing python files and not YCM
 let g:ycm_filetype_specific_completion_to_disable = { 'python' : 1 }
 let g:ycm_filetype_blacklist = { 'python' : 1 }
