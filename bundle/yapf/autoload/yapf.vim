@@ -23,7 +23,7 @@
 function! yapf#YAPF() range
   " Determine range to format.
   let l:line_ranges = a:firstline . '-' . a:lastline
-  let l:cmd = 'yapf --lines=' . l:line_ranges
+  let l:cmd = 'yapf --style google --lines=' . l:line_ranges
 
   " Call YAPF with the current buffer
   if exists('*systemlist')
@@ -45,5 +45,5 @@ function! yapf#YAPF() range
   call setline(1, l:formatted_text)
 
   " Reset cursor to first line of the formatted range.
-  call cursor(a:firstline, 1)
+  call cursor(a:lastline, 1)
 endfunction
