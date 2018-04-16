@@ -64,3 +64,7 @@ let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 " vim-go, use gofmt -s instead of gofmt
 let g:go_fmt_options = { 'gofmt': '-s' }
+
+" omnisharp configuration
+let g:OmniSharp_server_path = '/opt/omnisharp-roslyn/OmniSharp.exe'
+let g:Omnisharp_stop_server = 0  " Do not stop the server on exit
