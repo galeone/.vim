@@ -55,12 +55,9 @@ let g:clang_format#style_options = {
             \ "BreakBeforeBraces" : "Stroustrup"}
 
 " ClangFormat command on write
-autocmd BufWrite *.cpp,*.cc,*.hpp :ClangFormat
+autocmd BufWrite *.cpp,*.cc,*.hpp :ClangFormata
+" YAPF format on write
 autocmd BufWrite *.py :YAPF
-
-" Use vim-jedy for editing python files and not YCM
-let g:ycm_filetype_specific_completion_to_disable = { 'python' : 1 }
-let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 " vim-go, use gofmt -s instead of gofmt
 let g:go_fmt_options = { 'gofmt': '-s' }
