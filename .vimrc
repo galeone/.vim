@@ -52,10 +52,11 @@ let g:clang_format#style_options = {
             \ "AllowShortIfStatementsOnASingleLine" : "true",
             \ "AlwaysBreakTemplateDeclarations" : "true",
             \ "Standard" : "C++11",
-            \ "BreakBeforeBraces" : "Stroustrup"}
+            \ "BreakBeforeBraces" : "Stroustrup",
+            \ "ReflowComments": "false"}
 
 " ClangFormat command on write
-autocmd BufWrite *.cpp,*.cc,*.hpp :ClangFormata
+autocmd BufWrite *.cpp,*.cc,*.hpp :ClangFormat
 " YAPF format on write
 autocmd BufWrite *.py :YAPF
 
