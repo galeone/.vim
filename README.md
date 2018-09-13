@@ -11,7 +11,6 @@ git clone --recursive git@github.com:galeone/.vim
 ln -s ~/.vim/.vimrc ~/.vimrc
 cd /usr/include
 ctags -f ~/.vim/stdtags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-aurman -S omnisharp-roslyn dotnet-sdk
 
 # On Archlinux is better using system-libclang
 cd ~/.vim/bundle/YouCompleteMe
