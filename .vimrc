@@ -54,12 +54,15 @@ let g:clang_format#style_options = {
             \ "AlwaysBreakTemplateDeclarations" : "true",
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Stroustrup",
-            \ "ReflowComments": "false"}
+            \ "ReflowComments": "false",
+            \ "SortIncludes": "true"}
 
 " ClangFormat command on write
-autocmd BufWrite *.cpp,*.cc,*.hpp :ClangFormat
+autocmd BufWrite *.cpp,*.cc,*.hpp,*.proto :ClangFormat
 " YAPF format on write
-autocmd BufWrite *.py :YAPF
+" autocmd BufWrite *.py :YAPF
+" Black format on write
+autocmd BufWritePre *.py execute ':Black'
 
 " vim-go, use gofmt -s instead of gofmt
 let g:go_fmt_options = { 'gofmt': '-s' }
