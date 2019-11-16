@@ -59,10 +59,12 @@ let g:clang_format#style_options = {
 
 " ClangFormat command on write
 autocmd BufWrite *.cpp,*.cc,*.hpp,*.proto :ClangFormat
-" YAPF format on write
-" autocmd BufWrite *.py :YAPF
-" Black format on write
-autocmd BufWritePre *.py execute ':Black'
+
+function ImprovePython()
+    execute ':Black'
+    execute ':Isort'
+endfunction
+autocmd BufWritePre *.py call ImprovePython()
 
 " vim-go, use gofmt -s instead of gofmt
 let g:go_fmt_options = { 'gofmt': '-s' }
