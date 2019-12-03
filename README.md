@@ -23,3 +23,11 @@ cd ~/.vim/bundle/YouCompleteMe
 
 The C++ projects that use CMake (and thus can't work easily with the default YCM set of flags) must run cmake first and generate the `compilation_database.json` file, then copy the `.ycm_extra_conf.py` file into the project root in order to have
 the right suggestions for sources that are not in the standard library.
+
+### Update
+
+Copy paste version of submodule update command and sync.
+
+```
+git submodule foreach "git pull origin master; git checkout master; git submodule sync --recursive; git submodule update --init --recursive"
+```
