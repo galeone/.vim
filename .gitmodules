@@ -19,3 +19,6 @@
 [submodule "bundle/vim-isort"]
 	path = bundle/vim-isort
 	url = https://github.com/fisadev/vim-isort
+[submodule "bundle/phpcomplete.vim"]
+	path = bundle/phpcomplete.vim
+	url = git://github.com/shawncplus/phpcomplete.vim.git
