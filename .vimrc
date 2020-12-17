@@ -42,6 +42,7 @@ au BufRead,BufNewFile *.md set spell spelllang=en_us
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_binary_path = 'python'
+let g:ycm_filetype_blacklist = {'go': 1}
 
 " https://stackoverflow.com/questions/6514800/vim-auto-completion-for-cs-include-clause
 map <C-L> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
