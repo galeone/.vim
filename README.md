@@ -16,7 +16,7 @@ ctags -f ~/.vim/stdtags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 cd ~/.vim/bundle/YouCompleteMe
 # If your device is a low spec device (like a raspberry pi) is better to compile using a single core:
 # Just define the env var YCM_CORES=1
-./install.py --clang-completer --system-libclang --rust-completer
+./install.py --clang-completer --system-libclang --rust-completer --go-completer
 ```
 
 ### C++ projects
