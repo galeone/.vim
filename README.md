@@ -29,5 +29,5 @@ the right suggestions for sources that are not in the standard library.
 Copy paste version of submodule update command and sync.
 
 ```
-git submodule foreach "git pull origin master; git checkout master; git submodule sync --recursive; git submodule update --init --recursive"
+git submodule foreach git checkout master; git clean -fdx; git submodule foreach 'git clean -fdx'; git pull origin master; git submodule sync --recursive; git submodule update --init --recursive
 ```
