@@ -7,6 +7,13 @@ set nocp
 set encoding=utf-8
 setglobal fileencoding=utf-8
 
+if has("unix")
+    let s:uname = system("uname -s")
+    if s:uname == "Darwin\n"
+        set backspace=indent,eol,start
+    endif
+endif
+
 " map autocompletion (C-n) to ctrl + space
 if has("gui_running")
 " C-space works in gvim both in windows & linux
