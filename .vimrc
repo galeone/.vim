@@ -66,7 +66,7 @@ let g:clang_format#style_options = {
             \ "SortIncludes": "true"}
 
 " ClangFormat command on write
-autocmd BufWrite *.cpp,*.cc,*.hpp,*.proto :ClangFormat
+"autocmd BufWrite *.cpp,*.cc,*.hpp,*.proto :ClangFormat
 
 function ImprovePython()
     execute ':Black'
