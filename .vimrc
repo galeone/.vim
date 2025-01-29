@@ -70,7 +70,6 @@ let g:clang_format#style_options = {
 
 function ImprovePython()
     execute ':Black'
-    execute ':Isort'
 endfunction
 autocmd BufWritePre *.py call ImprovePython()
 
