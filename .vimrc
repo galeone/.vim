@@ -44,7 +44,7 @@ Plug 'jansenm/vim-cmake'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'maksimr/vim-jsbeautify'
 Plug 'galeone/vim-pi-chat'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --user --clang-completer --system-libclang --rust-completer --go-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang --rust-completer --go-completer' }
 Plug 'psf/black'
 call plug#end()
 
