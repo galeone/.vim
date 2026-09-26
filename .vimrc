@@ -46,6 +46,7 @@ Plug 'fatih/vim-go'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'galeone/vim-pi-chat'
 Plug 'Valloric/YouCompleteMe'
+Plug 'psf/black'
 call plug#end()
 
 " Set filetype=bbcode if file have .bbcode extension
@@ -91,5 +92,23 @@ autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 " rust
 let g:rustfmt_autosave = 1
+" black: format python files on save
+" (the psf/black :Black command needs a +python3 vim, so call the binary directly)
+function! FormatWithBlack()
+    if !executable('black')
+        return
+    endif
+    let l:prev_swap = &swapfile
+    setlocal noswapfile
+    write
+    let l:ret = system('black -q ' . shellescape(expand('%:p')))
+    if v:shell_error == 0
+        silent edit!
+    else
+        echohl ErrorMsg | echo l:ret | echohl None
+    endif
+    let &swapfile = l:prev_swap
+endfunction
+autocmd BufWritePre *.py call FormatWithBlack()
 " vim-pi-chat
 let g:pi_chat_width = 0.4    " chat panel = 40% of the window width

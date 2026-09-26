@@ -19,3 +19,6 @@
 [submodule "plugged/vim-pi-chat"]
 	path = plugged/vim-pi-chat
 	url = git@github.com:galeone/vim-pi-chat.git
+[submodule "plugged/black"]
+	path = plugged/black
+	url = https://github.com/psf/black
