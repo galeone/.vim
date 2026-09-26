@@ -42,10 +42,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'rhysd/vim-clang-format'
 Plug 'jansenm/vim-cmake'
 Plug 'tpope/vim-dispatch'      " needed by vim-go
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'maksimr/vim-jsbeautify'
 Plug 'galeone/vim-pi-chat'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --user' }
 Plug 'psf/black'
 call plug#end()
 
