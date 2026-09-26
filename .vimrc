@@ -41,7 +41,6 @@ let g:tex_flavor = "latex"
 call plug#begin('~/.vim/plugged')
 Plug 'rhysd/vim-clang-format'
 Plug 'jansenm/vim-cmake'
-Plug 'tpope/vim-dispatch'      " needed by vim-go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'maksimr/vim-jsbeautify'
 Plug 'galeone/vim-pi-chat'

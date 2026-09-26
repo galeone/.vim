@@ -4,9 +4,6 @@
 [submodule "plugged/vim-cmake"]
 	path = plugged/vim-cmake
 	url = https://github.com/jansenm/vim-cmake
-[submodule "plugged/vim-dispatch"]
-	path = plugged/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch
 [submodule "plugged/vim-go"]
 	path = plugged/vim-go
 	url = https://github.com/fatih/vim-go
