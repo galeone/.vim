@@ -1,21 +1,21 @@
-[submodule "bundle/vim-clang-format"]
-	path = bundle/vim-clang-format
+[submodule "plugged/vim-clang-format"]
+	path = plugged/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format
-[submodule "bundle/vim-cmake"]
-	path = bundle/vim-cmake
+[submodule "plugged/vim-cmake"]
+	path = plugged/vim-cmake
 	url = https://github.com/jansenm/vim-cmake
-[submodule "bundle/vim-go"]
-	path = bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe/
-[submodule "bundle/vim-dispatch"]
-	path = bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule "bundle/black"]
-	path = bundle/black
-	url = https://github.com/ambv/black
-[submodule "bundle/vim-jsbeautify"]
-	path = bundle/vim-jsbeautify
-	url = https://github.com/maksimr/vim-jsbeautify.git
+[submodule "plugged/vim-dispatch"]
+	path = plugged/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "plugged/vim-go"]
+	path = plugged/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "plugged/vim-jsbeautify"]
+	path = plugged/vim-jsbeautify
+	url = https://github.com/maksimr/vim-jsbeautify
+[submodule "plugged/YouCompleteMe"]
+	path = plugged/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "plugged/vim-pi-chat"]
+	path = plugged/vim-pi-chat
+	url = git@github.com:galeone/vim-pi-chat.git

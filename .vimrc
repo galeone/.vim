@@ -37,8 +37,16 @@ filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 
-" Use pathogen to enabled and install every plugin in the bundle folder
-execute pathogen#infect()
+" Use vim-plug to install plugins (kept in this repo as git submodules)
+call plug#begin('~/.vim/plugged')
+Plug 'rhysd/vim-clang-format'
+Plug 'jansenm/vim-cmake'
+Plug 'tpope/vim-dispatch'      " needed by vim-go
+Plug 'fatih/vim-go'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'galeone/vim-pi-chat'
+Plug 'Valloric/YouCompleteMe'
+call plug#end()
 
 " Set filetype=bbcode if file have .bbcode extension
 au BufRead,BufNewFile *.bbcode set filetype=bbcode
@@ -46,7 +54,7 @@ au BufRead,BufNewFile *.bbcode set filetype=bbcode
 " Turn on spellchecker if file extension is .md, .txt
 au BufRead,BufNewFile *.md set spell spelllang=en_us
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = expand('$HOME/.vim/.ycm_extra_conf.py')
 let g:ycm_confirm_extra_conf = 0
 "let g:ycm_python_binary_path = 'python'
 "let g:ycm_filetype_blacklist = {'go': 1}
@@ -68,11 +76,6 @@ let g:clang_format#style_options = {
 " ClangFormat command on write
 "autocmd BufWrite *.cpp,*.cc,*.hpp,*.proto :ClangFormat
 
-function ImprovePython()
-    execute ':Black'
-endfunction
-autocmd BufWritePre *.py call ImprovePython()
-
 " vim-go, use gofmt -s instead of gofmt
 let g:go_fmt_options = { 'gofmt': '-s' }
 
@@ -88,3 +91,5 @@ autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 " rust
 let g:rustfmt_autosave = 1
+" vim-pi-chat
+let g:pi_chat_width = 0.4    " chat panel = 40% of the window width
