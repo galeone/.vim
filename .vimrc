@@ -28,7 +28,7 @@ endif
 set pastetoggle=<F2>
 
 " runtimepath
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
 " enable filetype plugin and indent
 filetype plugin indent on
@@ -38,7 +38,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 
 " Use vim-plug to install plugins (kept in this repo as git submodules)
-call plug#begin('~/.vim/plugged')
+call plug#begin(expand('$HOME/.vim/plugged'))
 Plug 'rhysd/vim-clang-format'
 Plug 'jansenm/vim-cmake'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -61,7 +61,7 @@ let g:ycm_confirm_extra_conf = 0
 
 " https://stackoverflow.com/questions/6514800/vim-auto-completion-for-cs-include-clause
 map <C-L> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-set tags=~/.vim/stdtags,tags,.tags,../tags
+set tags=$HOME/.vim/stdtags,tags,.tags,../tags
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 let g:clang_format#style_options = {
