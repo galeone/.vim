@@ -111,3 +111,31 @@ endfunction
 autocmd BufWritePre *.py call FormatWithBlack()
 " vim-pi-chat
 let g:pi_chat_width = 0.4    " chat panel = 40% of the window width
+
+" Auto-reload buffers after external edits (pi, shell, git): unmodified
+" buffers are re-read automatically; modified ones are left alone.
+set autoread
+set updatetime=200
+augroup AutoRead
+    autocmd!
+    autocmd CursorHold,CursorHoldI * checktime
+    autocmd FocusGained * checktime   " needs focus events (tmux: set -g focus-events on)
+augroup END
+
+" open the chat panel at startup (context = the file vim was started on);
+" skip diff mode and headless/one-shot launches. `quiet` keeps the cursor
+" out of the chat prompt's insert mode (stray startup input must never be
+" sent to the agent as a message); win_gotoid is a belt-and-braces restore
+" of the file window in case the split opens focused on the chat side.
+" :PiOpen is a -nargs=* command and this vim build's parser swallows the rest
+" of the line into its argument, so it must NOT be chained with | - it gets its
+" own line inside the function below.
+function! s:pi_boot() abort
+  if exists(':PiOpen') && !&diff && (has('terminal') || has('gui_running'))
+    let s:pi_boot_win = win_getid()
+    PiOpen quiet
+    call win_gotoid(s:pi_boot_win)
+    unlet s:pi_boot_win
+  endif
+endfunction
+autocmd VimEnter * call s:pi_boot()
